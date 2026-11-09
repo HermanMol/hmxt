@@ -1,0 +1,20 @@
+... CoPilot Prompt to generate the base of add_MDToC.ps1
+... 2026-10-07 13:08:47 h.mol
+
+create a windows powershell scriptfile that has one argument a file name to be
+processed. The file is simple text file expected to be in the format of
+markdown. The script reads the whole file and collects the paragraph headers.
+Before each header it inserts a bookmark link before each paragraph header. The
+collected paragraph headers are put in a contents block, addded to the file. The
+result it then written to a new, unique file in the system TEMP folder
+
+...Test files
+H:\20_work\30_companies\10_hmol\20_work\FI24a_OCI26\10_work\55_git\utPLSQL\docs\index.md
+H:\20_work\30_companies\10_hmol\20_work\FI24a_OCI26\10_work\55_git\utPLSQL\docs\userguide\expectations.md
+H:\20_work\30_companies\10_hmol\20_work\FI24a_OCI26\10_work\55_git\utPLSQL\docs\userguide\annotations.md
+
+... Execution examples
+. .\add_MDToC.ps1
+	will prompt for the file to process.
+
+. .\add_MDToC.ps1 expectations.md
