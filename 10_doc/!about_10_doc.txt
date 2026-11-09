@@ -1,0 +1,2 @@
+~\10_wrk\10_doc\!about_10_doc.txt
+Put all your documents in this directory.

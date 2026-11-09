@@ -1,0 +1,4 @@
+~\10_wrk\30_server\!about_30_server.txt
+
+Server specific objects.
+All clients might need these.

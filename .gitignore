@@ -1,0 +1,8 @@
+# Ignore Windows shortcut files
+# Initial defaults for the HMX projects
+*[hH]ere.lnk
+
+# Others to be ignored
+*.tmp
+# default spoolfile extentions for Oracle SQL/Plus, SQLcl
+*.lst

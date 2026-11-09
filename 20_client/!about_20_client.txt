@@ -1,0 +1,5 @@
+~\10_wrk\20_client\!about_20_client.txt
+
+Client specific objects.
+Each client uses this.
+Server does not need any of these objects.

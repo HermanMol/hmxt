@@ -1,0 +1,15 @@
+~\10_wrk\!about_10_wrk.txt
+Put all your new work that is intended to be deployed or used in the deployment
+in this directory.
+
+Standard subfolders:
+- 10_doc
+- 20_client
+- 30_server
+- 40_database
+- 50_testing
+- 60_data
+- 70_logs
+- 80_tools
+- 90_baselines
+- 99_temp
