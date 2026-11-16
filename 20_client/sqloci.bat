@@ -2,13 +2,21 @@
 setlocal
 set "dbu=%~1"
 set "dbp=%~2"
-rem hmol, 2026-10-21 15:22:00
-rem https://forums.oracle.com/ords/apexds/post/sqlcl-release-25-1-jre-24-warning-a-restricted-method-in-ja-9589#comment_82909068402697175290840244404527711447
-echo **************************************************************************************
-echo *A: Setting Java enable-native-acces and enable-final-field-mutation to ALL-UNNAMED
-echo.    because using Java 24 and SQLcl requires only 17 or 21 (21 is preferred).
-echo **************************************************************************************
-set "JAVA_TOOL_OPTIONS=--enable-native-access=ALL-UNNAMED --enable-final-field-mutation=ALL-UNNAMED"
+rem
+call prep_sqlcl_java.cmd
+rem
+rem Change Character Code Page to UTF8 (https://ss64.com/nt/chcp.html)
+rem * The 65000/1 code pages are encoded as UTF-7/8 to allow to working with unicode data in 7-bit and 8-bit environments.
+rem get current code page
+For /f "tokens=2 delims=:." %%G in ('chcp') Do set _codepage=%%G
+echo *I: Setting code page to UTF-8
+chcp 65001
+rem
 sql -cloudconfig H:\70_data\oracle\oci_herman96\Wallet_TDQ02CEI7GIKC7J5.zip %dbu%/%dbp%@tdq02cei7gikc7j5_medium
+rem
+rem restore original Character Code Page
+echo *I: Restoring original code page %_codepage%
+chcp %_codepage%
+rem
 endlocal
 exit /b
