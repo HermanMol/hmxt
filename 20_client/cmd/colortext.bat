@@ -14,7 +14,7 @@ rem hmo, 13-Sep-2021
 rem hmo, 2026-11-14 11:37:39 fixed for Windows terminal [Version 1.24.12741.0]
 rem
 rem Styles: Normal=0, Bold=1, Underline=4, Inverse=7 ... does not work yet - yes it does
-if "%1" equ "/?" hlp "%~0"
+if "%~1" equ "/?" hlp "%~0"
 setlocal
 rem get the Esc character
 for /F %%a in ('echo prompt $E^| cmd') do set "ESC=%%a"
@@ -123,3 +123,4 @@ exit /b
 |
 ` Note: the non-printable Esc character (hex: 1B) must be used for the code.
 :EndHelp
+-- #desc: Print a line with a foreground and background color

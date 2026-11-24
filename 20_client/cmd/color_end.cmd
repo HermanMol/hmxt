@@ -1,5 +1,10 @@
 @echo off
-rem Change the foreground and background color back
+if "%~1" equ "/?" hlp "%~0"
+goto :EndHelp
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+:StartHelp
+-- #desc: Change the foreground and background color back
+:EndHelp
 rem Use color_begin.cmd to set a different screen color.
 rem Use colortext.bat to show only one line.
 setlocal

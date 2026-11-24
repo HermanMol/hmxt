@@ -1,6 +1,12 @@
 @echo off
-rem hlp.bat
-rem Show the Syntax/Help of a ictd commandline tool
+if "%~1" equ "/?" hlp "%~0"
+goto :EndHelp
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+:StartHelp
+-- #desc: Show the Syntax/Help of  HMX-commandline tool
+-- #example: hlp /?
+:EndHelp
+rem Hmol 2026-11-07 14:28:50
 rem Version: hmo@11jul2021
 setlocal enableextensions enabledelayedexpansion
 set "show=false"
@@ -37,7 +43,7 @@ exit /b
 | Help!
 | ==========
 | 
-| Purpose: Show the help / syntax for an ICTD commandline tool
+| Purpose: Show the help / syntax for a HMX-commandline tool
 | 
 | Syntax: hlp {filename}
 | 

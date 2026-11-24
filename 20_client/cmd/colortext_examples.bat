@@ -1,4 +1,11 @@
 @echo off
+if "%~1" equ "/?" hlp "%~0"
+goto :EndHelp
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+:StartHelp
+-- #desc: Show examples of the HMX colortext statement
+-- #example: colortext_examples
+:EndHelp
 rem n - black (none / bright=dark grey) "None", to avoid conflict with blue"
 rem r - red (bright)
 rem g - green (bright)

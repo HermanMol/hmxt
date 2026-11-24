@@ -1,19 +1,20 @@
 @echo off
-rem hmxt_cmd_init.cmd
-rem Initialize the CMD session for HMXT
+if "%~1" equ "/?" hlp "%~0"
+goto :EndHelp
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+:StartHelp
+-- #desc: Initialize the CMD session for HMX development project
+:EndHelp
+rem Hmol 2026-11-07 14:28:50
 rem a. Set the Title to the last directory node
 rem b. Set your favourite prompt
-
-rem d. If the current folder is for the current company, then add the company
-rem    command and SQL script folders to the PATH and SQLPATH (if not already
-rem    in those patchs)
+rem c. Show the project banner, if it exists
 rem HMXT 2023-07-30 12:13:28
 rem HMXT 2026-11-07 12:52:10
 cd %cd%
 rem
 :already_set
 call get_last_dir_node lastnode
-rem title HMX - %cd:~-15%
 title HMX: %lastnode%
 set lastnode=
 call myprompt.bat

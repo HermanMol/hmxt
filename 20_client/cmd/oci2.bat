@@ -1,5 +1,12 @@
 @echo off
-if "%1" equ "/?" hlp "%~0"
+echo *** %~0 is deprecated.
+echo Now using OCI3
+echo.
+pause
+oci3 %*
+exit /b 3
+
+if "%~1" equ "/?" hlp "%~0"
 setlocal
 call hmx_show_banner.cmd oci2
 call hmx_init.bat
@@ -32,7 +39,7 @@ call tiesrever.cmd "%pwd%" pwd
 endlocal
 exit /b
 ....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
-:StartHelp
+ :StartHelp
 | 
 | OCI2
 | ====

@@ -27,7 +27,9 @@
       ascii_52.txt
       ascii_44.txt
 #>
-
+<#
+-- #desc: Create an ASCII-art banner from text using ascii_XX.txt character definition files.
+#>
 param(
     [Parameter(Mandatory = $true, Position = 0)]
     [string]$InputText

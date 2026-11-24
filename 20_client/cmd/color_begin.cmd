@@ -1,5 +1,10 @@
 @echo off
-rem Change the foreground and background color on the screen for next text line(s)
+if "%~1" equ "/?" hlp "%~0"
+goto :EndHelp
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+:StartHelp
+-- #desc: Change the foreground and background color on the screen for next text line(s)
+:EndHelp
 rem Use color_end.cmd to revert to normal
 rem Use colortext.bat to show only one line
 setlocal

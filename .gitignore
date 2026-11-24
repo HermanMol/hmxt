@@ -27,7 +27,7 @@ fff*
 # `git rm --cached -r ./50_testing`
 #
 # When no relevant data in any folder then ignore it
-/10_doc/**
+# /10_doc/**
 # /20_client/**
 /30_server/**
 /40_database/**

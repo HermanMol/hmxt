@@ -1,57 +1,15 @@
 @echo off
-rem gig_wip.bat git check ignore with various options
+if "%~1" equ "/?" hlp "%~0"
+goto :EndHelp
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+:StartHelp
+-- #desc: Git Ignore checker, wrapper for git check-ignore (experimental)
+-- #example: gig_wip filetocheck 
+:EndHelp
+rem Hmol 2026-11-07 14:28:50
 setlocal
 rem ------------------------------
-echo.
-echo 01) Expected not ignored (w/index) 
-@echo on
-git check-ignore -v ./40_database/db_admin/installers/!about.txt
-@set "err=%ERRORLEVEL%
-@echo off
-echo *I: ErrorLevel=%err%
-if %err% equ 0 echo *I: --^> Will be ignored
-if %err% equ 1 echo *I: --^> Will NOT be ignored
-if %err% equ 128 echo *A: --^> Fatal error during git check-ignore
-
-rem ------------------------------
-echo.
-echo 02) Expected not ignored (no-index)
-@echo on
-git check-ignore -v -- no-index ./40_database/db_admin/installers/!about.txt
-@set "err=%ERRORLEVEL%
-@echo off
-echo *I: ErrorLevel=%err%
-if %err% equ 0 echo *I: --^> Will be ignored
-if %err% equ 1 echo *I: --^> Will NOT be ignored
-if %err% equ 128 echo *A: --^> Fatal error during git check-ignore
-
-rem ------------------------------
-echo.
-echo 03) Expected ignored (w/index) 
-@echo on
-git check-ignore -v ./10_doc/!about_10_doc.txt
-@set "err=%ERRORLEVEL%
-@echo off
-echo *I: ErrorLevel=%err%
-if %err% equ 0 echo *I: --^> Will be ignored
-if %err% equ 1 echo *I: --^> Will NOT be ignored
-if %err% equ 128 echo *A: --^> Fatal error during git check-ignore
-
-rem ------------------------------
-echo.
-echo 04) Expected ignored (no-index)
-@echo on
-git check-ignore -v -- no-index ./10_doc/!about_10_doc.txt
-@set "err=%ERRORLEVEL%
-@echo off
-echo *I: ErrorLevel=%err%
-if %err% equ 0 echo *I: --^> Will be ignored
-if %err% equ 1 echo *I: --^> Will NOT be ignored
-if %err% equ 128 echo *A: --^> Fatal error during git check-ignore
-
-
-
-set "checkthis=./40_database/db_admin/templates/hmx_templates.txt"
+set "checkthis=%~1"
 rem ------------------------------
 echo.
 echo 05) ?Expected ignored (w/index) 

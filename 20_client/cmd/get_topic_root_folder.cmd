@@ -1,11 +1,16 @@
 @echo off
-rem get_topic_root_folder.cmd
+if "%~1" equ "/?" hlp "%~0"
+goto :EndHelp
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+:StartHelp
+-- #desc: Get the topi/project root folder and returns it in the first argument.
+-- #example: call get_topic_root_folder myvar
+             echo Project root folder = %myvar%
+:EndHelp
+rem Hmol 2026-11-07 14:28:50
 rem Search up the path from the current path until the folder 95_hmxt is
 rem found: THEN you are in the root of the HMXT Topic Work Folder. From there
 rem all folders should be addressable relatively...
-rem Usage: call get_topic_root_folder myvar
-rem ... will return the HMXT root in myvar or empty is none found.
-rem Version 2023-04-30 11:04:43
 setlocal
 set "curdir=%cd%"
 set rootdir=

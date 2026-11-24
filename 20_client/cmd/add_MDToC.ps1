@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Adds a Table of Contents block and bookmark anchors to a Markdown file.
+Insert a Table of Contents using the headers in a MarkDown file.
 
 .DESCRIPTION
 This script processes a Markdown (.md) text file and performs three actions:
@@ -39,6 +39,9 @@ Same as above, using an absolute path.
 - The script does not modify the original file.
 - Works with UTF-8 encoded Markdown files.
 
+#>
+<#
+-- #desc: Insert a Table of Contents using the headers in a MarkDown file.
 #>
 param(
     [Parameter(Mandatory = $true)]

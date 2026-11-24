@@ -1,5 +1,5 @@
 @echo off
-if "%1" equ "/?" hlp "%~0"
+if "%~1" equ "/?" hlp "%~0"
 setlocal
 call color_begin.cmd wb
 call ascii_banner "OCI3 DB %~1"
@@ -51,3 +51,5 @@ exit /b
 | o SQLcl is started (using HMX sqloci.bat)
 ` !! this line will not be shown in the help !!
 :EndHelp
+-- #desc: Run SQLcl in my Oracle Cloud Infrastructure
+-- #example: oci3 dbuser

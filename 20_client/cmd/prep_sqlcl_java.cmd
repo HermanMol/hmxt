@@ -1,4 +1,10 @@
 @echo off
+if "%~1" equ "/?" hlp "%~0"
+goto :EndHelp
+....+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....8
+:StartHelp
+-- #desc: This file prepares the Java environment for running Oracle SQLcl.
+:EndHelp
 rem THIS FILE IS MEANT FOR RUNNING ORACLE SQLCL
 rem hmo, 2026-11-16 09:38:19
 rem ================================================================================================
