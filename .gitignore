@@ -6,3 +6,48 @@
 *.tmp
 # default spoolfile extentions for Oracle SQL/Plus, SQLcl
 *.lst
+# No Windows shortcut files
+*.lnk
+*.bak
+
+# hmx ignore all files and folders starting with notgit or fff
+notgit_*/
+notgit*
+fff*/
+fff*
+
+# HMX Project folders in 10_wrk
+# - when no data then ignore these folders
+# - at least the 10_doc folder will be added
+# 
+# If files were not ignored and must be ignored:
+# `git rm --cached ./50_testing`
+# 
+# Or if that folder is not empty: 
+# `git rm --cached -r ./50_testing`
+#
+# When no relevant data in any folder then ignore it
+# /10_doc/**
+# /20_client/**
+# /30_server/**
+# /40_database/**
+# /50_testing/**
+# /60_data/**
+# /70_logs/**
+# /80_tools/**
+# /90_baselines/**
+# /99_temp/**
+# Subfolders in 40_database from SQLcl project command
+# /40_database/comments/**
+# /40_database/db_admin/**
+# /40_database/object_grants/**
+# /40_database/operators/**
+# /40_database/package_bodies/**
+# /40_database/package_specs/**
+# /40_database/procedures/**
+# /40_database/sequences/**
+# /40_database/tables/**
+# /40_database/triggers/**
+# /40_database/type_bodies/**
+# /40_database/type_specs/**
+# /40_database/views/**

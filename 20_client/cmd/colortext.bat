@@ -13,31 +13,6 @@ rem Works on Command Prompt in Microsoft Windows [Version 10.0.19043.1165]
 rem hmo, 13-Sep-2021
 rem hmo, 2026-11-14 11:37:39 fixed for Windows terminal [Version 1.24.12741.0]
 rem
-rem # Next section contains the definition of codes and is used FOR statements, below!
-rem # *** DATA SECTION ********** DO NOT CHANGE NEXT DATA **********
-rem #_____= #Color   BG FG B Color
-rem data:n= black    40 30 0 black = none (to not conflict with blue)
-rem data:r= red      41 31 4 red
-rem data:g= green    42 32 2 green
-rem data:y= yellow   43 33 6 yellow
-rem data:b= blue     44 34 1 blue
-rem data:m= magenta  45 35 5 magenta
-rem data:c= cyan     46 36 3 cyan
-rem data:w= white    47 37 7 white
-rem data:N= Black   100 90 8 Bright Black = Grey = None (to not conflict with Blue or Green)
-rem data:R= Red     101 91 C Bright Red
-rem data:G= Green   102 92 A Bright Green
-rem data:Y= Yellow  103 93 E Bright Yellow
-rem data:B= Blue    104 94 9 Bright Blue
-rem data:M= Magenta 105 95 D Bright Magenta
-rem data:C= Cyan    106 96 B Bright Cyan
-rem data:W= White   107 97 F Bright White
-rem #Alternatives:
-rem data:a= aqua     46 36 3 aqua (cyan)
-rem data:p= purple   45 35 5 purple (magenta)
-rem data:A= Aqua    106 96 B Bright Aqua (cyan)
-rem data:P= Purple  105 95 D Bright Purple (magenta)
-rem # *** DATA SECTION ********** DO NOT CHANGE PRIOR DATA **********
 rem Styles: Normal=0, Bold=1, Underline=4, Inverse=7 ... does not work yet - yes it does
 if "%1" equ "/?" hlp "%~0"
 setlocal
@@ -66,8 +41,8 @@ if defined hmodebug echo *D: Background=%bg%
 if defined hmodebug echo *D: Style     =%st%
 set "fgnr=."
 set "bgnr=."
-for /F "usebackq tokens=3-6* delims= " %%H in (`findstr /B /C:"rem data:%fg%=" "%~f0" `) do set "fgnr=%%J"
-for /F "usebackq tokens=3-6* delims= " %%H in (`findstr /B /C:"rem data:%bg%=" "%~f0" `) do set "bgnr=%%I"
+for /F "usebackq tokens=3-6* delims= " %%H in (`findstr /B /C:"rem data:%fg%=" "%HMXT_LOCAL%\data\color_definitions.cfg" `) do set "fgnr=%%J"
+for /F "usebackq tokens=3-6* delims= " %%H in (`findstr /B /C:"rem data:%bg%=" "%HMXT_LOCAL%\data\color_definitions.cfg" `) do set "bgnr=%%I"
 rem if any of the colors is not found, a message is displayed and a default foreground and background color are assigned
 if "%fgnr%" equ "." (
 	echo *W: No color for foreground color "%fg%"; use: n,r,g,y,b,m/p,c/a,w uppercase for bright.

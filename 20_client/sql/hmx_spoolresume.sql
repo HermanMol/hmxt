@@ -1,0 +1,13 @@
+-- Utility: hmx_spoolresume.sql
+-- Resume spooling to the spoolfile started with hmx_spoolstart and paused with hmx_spoolpause
+--
+-- Family of HMX spooling commands:
+--	o hmx_spoolstart.sql
+--	o hmx_spoolpause.sql
+--	o hmx_spoolresume.sql
+--	o hmx_spoolfinish.sql
+--	o hmx_spoolrun.sql = spoolstart + run + spoolfinish
+--
+-- Repository: git@github.com:HermanMol/FJ12a_HMX-dev.git
+--
+spool &v_spoolfile. append
