@@ -27,16 +27,16 @@ fff*
 # `git rm --cached -r ./50_testing`
 #
 # When no relevant data in any folder then ignore it
-# /10_doc/**
+/10_doc/**
 # /20_client/**
-# /30_server/**
-# /40_database/**
-# /50_testing/**
-# /60_data/**
-# /70_logs/**
-# /80_tools/**
-# /90_baselines/**
-# /99_temp/**
+/30_server/**
+/40_database/**
+/50_testing/**
+/60_data/**
+/70_logs/**
+/80_tools/**
+/90_baselines/**
+/99_temp/**
 # Subfolders in 40_database from SQLcl project command
 # /40_database/comments/**
 # /40_database/db_admin/**
