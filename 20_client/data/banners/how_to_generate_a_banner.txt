@@ -1,0 +1,5 @@
+2023-07-29 17:01:07 HMO
+Where to get such a banner?
+Font = f=Colossal
+
+https://patorjk.com/software/taag/#p=display&f=Colossal
